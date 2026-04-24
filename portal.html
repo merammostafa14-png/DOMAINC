@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOMAINC Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="portal-layout">
+      <aside class="portal-sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">D</span>
+          <span>DOMAINC</span>
+        </a>
+
+        <nav class="sidebar-nav">
+          <a href="portal.html" class="active">Overview</a>
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="containers.html">Containers</a>
+          <a href="storage.html">Storage</a>
+          <a href="status.html">System Status</a>
+          <a href="api-reference.html">API Reference</a>
+          <a href="plans.html">Billing</a>
+          <a href="login.html">Settings</a>
+          <a href="contact.html">Support</a>
+        </nav>
+
+        <div class="sidebar-footer portal-panel">
+          <span class="muted-label">Console Overview</span>
+          <p>Navigate live infrastructure telemetry, node details, and operational controls from one portal.</p>
+        </div>
+      </aside>
+
+      <section class="portal-main">
+        <header class="portal-header reveal">
+          <div>
+            <span class="eyebrow">Control center</span>
+            <h1>DOMAINC infrastructure console.</h1>
+          </div>
+          <div class="hero-actions">
+            <a class="btn" href="status.html">Open Status</a>
+            <a class="btn-secondary" href="api-reference.html">View API Docs</a>
+          </div>
+        </header>
+
+        <div class="portal-kpi-grid">
+          <article class="portal-card reveal">
+            <span class="muted-label">Active traffic</span>
+            <strong class="portal-kpi">4.2 TB/s</strong>
+            <p>Measured across global peering and edge nodes.</p>
+          </article>
+          <article class="portal-card reveal">
+            <span class="muted-label">Global health</span>
+            <strong class="portal-kpi">99.99%</strong>
+            <p>All monitored services are within operational tolerance.</p>
+          </article>
+          <article class="portal-card reveal">
+            <span class="muted-label">DNS uptime</span>
+            <strong class="portal-kpi">99.998%</strong>
+            <p>Domain and traffic routing continuity across providers.</p>
+          </article>
+          <article class="portal-card reveal">
+            <span class="muted-label">Edge nodes</span>
+            <strong class="portal-kpi">42</strong>
+            <p>Live global point-of-presence locations.</p>
+          </article>
+        </div>
+
+        <div class="portal-workspace">
+          <div class="portal-grid portal-grid-wide">
+            <div class="portal-stack">
+              <article class="portal-card reveal">
+                <span class="muted-label">Global edge distribution</span>
+                <p>Realtime visualization of the distributed infrastructure across 42 POPs optimized for sub-10ms latency.</p>
+                <div class="stats-grid">
+                  <div class="metric">
+                    <span>US-East</span>
+                    <strong>4ms</strong>
+                  </div>
+                  <div class="metric">
+                    <span>EU-West</span>
+                    <strong>11ms</strong>
+                  </div>
+                  <div class="metric">
+                    <span>AP-South</span>
+                    <strong>18ms</strong>
+                  </div>
+                </div>
+              </article>
+
+              <article class="portal-card reveal note-card">
+                <span class="muted-label">Quick actions</span>
+                <div class="hero-actions">
+                  <a class="btn" href="containers.html">Deploy Instance</a>
+                  <a class="btn-secondary" href="storage.html">Review Storage</a>
+                </div>
+                <p>Use the portal navigation to access infrastructure, storage, and API services.</p>
+              </article>
+            </div>
+
+            <div class="portal-stack">
+              <article class="portal-card reveal">
+                <span class="muted-label">DNS management</span>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Hostname</th>
+                      <th>Type</th>
+                      <th>Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>cdn.domainc.net</td>
+                      <td>CNAME</td>
+                      <td>edge.domainc.net</td>
+                    </tr>
+                    <tr>
+                      <td>api.domainc.com</td>
+                      <td>A</td>
+                      <td>45.12.88.102</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+
+              <article class="portal-card reveal">
+                <span class="muted-label">Global node inventory</span>
+                <ul class="timeline-list">
+                  <li>
+                    <strong>US-East-1</strong>
+                    <p>Active compute, network, and storage with 99.999% uptime.</p>
+                  </li>
+                  <li>
+                    <strong>EU-West-2</strong>
+                    <p>Balanced load profile with optimized CDN edge delivery.</p>
+                  </li>
+                  <li>
+                    <strong>AP-South-1</strong>
+                    <p>Low-latency access for APAC traffic with encrypted storage replication.</p>
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <aside class="portal-rail">
+            <article class="portal-card reveal support-card">
+              <span class="muted-label">Operator Assist</span>
+              <h3>Need a fast action path?</h3>
+              <p>Use the support rail for common operations without leaving the overview canvas.</p>
+              <div class="support-actions">
+                <a class="btn" href="containers.html">New Container</a>
+                <a class="btn-secondary" href="api-reference.html">API Tokens</a>
+              </div>
+            </article>
+
+            <article class="portal-card reveal">
+              <span class="muted-label">Command queue</span>
+              <ul class="command-list">
+                <li><span>Create instance</span><strong>Ready</strong></li>
+                <li><span>Scale storage</span><strong>2 mins</strong></li>
+                <li><span>Rotate token</span><strong>Manual</strong></li>
+              </ul>
+            </article>
+
+            <article class="portal-card reveal mini-chat-card">
+              <div class="chat-widget-title">
+                <span class="brand-mark">D</span>
+                <div>
+                  <strong>Support relay</strong>
+                  <div class="mini-chat-subtitle">Architect online</div>
+                </div>
+              </div>
+              <div class="mini-chat-thread">
+                <div class="chat-mini bot">Need help picking the next infrastructure move?</div>
+                <div class="chat-mini user">Show me the fastest way to launch a container cluster.</div>
+                <div class="chat-mini bot">Start in Containers, then apply the recommended network policy from Infrastructure.</div>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

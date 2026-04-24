@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | DOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="auth-layout">
+      <section class="auth-copy">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark">D</span>
+            <span>DOMAINC</span>
+          </a>
+        </div>
+
+        <div class="reveal">
+          <span class="eyebrow">Secure The Foundation</span>
+          <h1>Welcome back.</h1>
+          <p>
+            Enter the next generation of infrastructure management. High-performance,
+            architectural silence, and absolute reliability.
+          </p>
+        </div>
+
+        <div class="auth-system reveal">
+          <div class="auth-pillars">
+            <div class="pillar">
+              <span class="muted-label">System Status</span>
+              <strong>Operational</strong>
+            </div>
+            <div class="pillar">
+              <span class="muted-label">Uptime</span>
+              <strong>99.99%</strong>
+            </div>
+            <div class="pillar">
+              <span class="muted-label">Global Edge</span>
+              <strong>Enabled</strong>
+            </div>
+          </div>
+          <p>DOMAINC Infrastructure V.4.0.0</p>
+        </div>
+      </section>
+
+      <section class="auth-card-wrap">
+        <div class="auth-card reveal">
+          <p class="muted-label">Access your infrastructure management suite.</p>
+          <h2>Login</h2>
+
+          <form class="form-grid" data-login-form>
+            <div class="field">
+              <label for="login-email">Email Address</label>
+              <input id="login-email" name="email" type="email" placeholder="name@company.com" required />
+            </div>
+            <div class="field">
+              <label for="login-password">Password</label>
+              <input id="login-password" name="password" type="password" placeholder="********" required />
+            </div>
+            <div class="auth-meta">
+              <a href="contact.html">Forgot Password?</a>
+              <span>SSO / Token</span>
+            </div>
+            <div class="auth-actions">
+              <button class="btn" type="submit">Login</button>
+            </div>
+            <p class="form-feedback" data-login-feedback hidden></p>
+          </form>
+
+          <div class="auth-divider">Or authenticate with</div>
+
+          <div class="auth-actions">
+            <a class="btn-secondary" href="contact.html">SSO</a>
+            <a class="btn-secondary" href="contact.html">Token</a>
+          </div>
+
+          <p style="margin-top: 1.5rem">
+            New to the platform?
+            <a href="signup.html" style="color: var(--accent-2)">Create an account</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | DOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">D</span>
+            <span>DOMAINC</span>
+          </a>
+          <button class="nav-toggle" type="button" data-nav-toggle>Menu</button>
+          <nav class="primary-nav" data-nav>
+            <a href="index.html">Hosting</a>
+            <a href="domains.html">Domains</a>
+            <a href="plans.html">Plans</a>
+            <a href="vps.html">VPS</a>
+            <a href="contact.html" class="active">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <a href="login.html" class="btn-secondary">Login</a>
+            <a href="portal.html" class="btn">Client Portal</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="feature-hero">
+          <div class="container feature-grid-two">
+            <div class="hero-copy reveal">
+              <span class="eyebrow">Contact DOMAINC</span>
+              <h1>Working contact flow connected to the backend.</h1>
+              <p>
+                Send sales, support, migration, or domain requests through the site.
+                Messages are posted to the Express API and stored in a JSON data file.
+              </p>
+            </div>
+            <aside class="hero-aside reveal">
+              <div class="hero-panel">
+                <span class="muted-label">Support scope</span>
+                <p>Hosting plans, domain services, migrations, billing, and deployment guidance.</p>
+              </div>
+              <div class="hero-panel">
+                <span class="muted-label">Response lane</span>
+                <p>Sales and support requests are captured immediately by the backend contact endpoint.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="contact-shell">
+              <article class="contact-panel reveal">
+                <p class="muted-label">Contact form</p>
+                <h3>Send your request</h3>
+                <form class="form-grid" data-contact-form>
+                  <div class="field">
+                    <label for="contact-page-name">Name</label>
+                    <input id="contact-page-name" name="name" type="text" placeholder="Your full name" required />
+                  </div>
+                  <div class="field">
+                    <label for="contact-page-email">Email</label>
+                    <input id="contact-page-email" name="email" type="email" placeholder="name@company.com" required />
+                  </div>
+                  <div class="field">
+                    <label for="contact-page-subject">Subject</label>
+                    <input id="contact-page-subject" name="subject" type="text" placeholder="Migration, billing, domains, support..." required />
+                  </div>
+                  <div class="field">
+                    <label for="contact-page-message">Message</label>
+                    <textarea id="contact-page-message" name="message" rows="6" placeholder="Tell us what you need and any timelines or technical constraints." required></textarea>
+                  </div>
+                  <div class="auth-actions">
+                    <button class="btn" type="submit">Send Request</button>
+                  </div>
+                  <p class="form-feedback" data-contact-feedback hidden></p>
+                </form>
+              </article>
+
+              <article class="contact-story reveal">
+                <span class="eyebrow">Why teams reach out</span>
+                <h2>Fast help for launches, transfers, and infrastructure questions.</h2>
+                <p>
+                  Keep the same visual experience while moving into a functional support flow
+                  backed by structured API routes and JSON storage.
+                </p>
+                <div class="story-list">
+                  <div class="story-item">
+                    <div class="story-meta">Sales</div>
+                    <h3>Pick the right hosting path</h3>
+                    <p>Compare shared hosting, VPS, and dedicated infrastructure with expert input.</p>
+                  </div>
+                  <div class="story-item">
+                    <div class="story-meta">Domains</div>
+                    <h3>Plan safe DNS and transfer changes</h3>
+                    <p>Coordinate renewal timing, record migration, and registrar changes with fewer surprises.</p>
+                  </div>
+                  <div class="story-item">
+                    <div class="story-meta">Migration</div>
+                    <h3>Move workloads with confidence</h3>
+                    <p>Use guided onboarding to reduce downtime risk and protect production traffic.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid reveal">
+            <div>
+              <a class="brand" href="index.html">
+                <span class="brand-mark">D</span>
+                <span>DOMAINC Infrastructure</span>
+              </a>
+              <p>Contact routing, domain services, and pricing data wired into a clean Express backend.</p>
+              <div class="footer-bottom">(c) 2026 DOMAINC Infrastructure. All rights reserved.</div>
+            </div>
+            <div class="footer-links">
+              <a href="index.html">Hosting</a>
+              <a href="plans.html">Plans</a>
+              <a href="domains.html">Domains</a>
+              <a href="portal.html">Portal</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

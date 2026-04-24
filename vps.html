@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VPS Hosting - DOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="has-chatbot">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">D</span>
+            <span>DOMAINC</span>
+          </a>
+          <button class="nav-toggle" type="button" data-nav-toggle>Menu</button>
+          <nav class="primary-nav" data-nav>
+            <a href="index.html">Hosting</a>
+            <a href="vps.html" class="active">VPS</a>
+            <a href="dedicated.html">Dedicated</a>
+            <a href="plans.html">Plans</a>
+            <a href="portal.html">Client Portal</a>
+          </nav>
+          <div class="nav-actions">
+            <a href="login.html" class="btn-secondary">Login</a>
+            <a href="signup.html" class="btn">Launch VPS</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="feature-hero">
+          <div class="container feature-grid-two">
+            <div class="hero-copy reveal">
+              <span class="eyebrow">Virtual Private Servers</span>
+              <h1>Elastic power for modern workloads.</h1>
+              <p>
+                Launch isolated VPS environments with premium NVMe storage, low-latency
+                routing, and the control surface teams need to scale without friction.
+              </p>
+              <div class="hero-actions">
+                <a class="btn" href="signup.html">Deploy VPS</a>
+                <a class="btn-secondary" href="portal.html">View Client Portal</a>
+              </div>
+              <div class="spec-grid">
+                <div class="metric">
+                  <span>Virtualization</span>
+                  <strong>KVM Ready</strong>
+                </div>
+                <div class="metric">
+                  <span>Storage</span>
+                  <strong>NVMe Arrays</strong>
+                </div>
+                <div class="metric">
+                  <span>Backups</span>
+                  <strong>Daily Snapshots</strong>
+                </div>
+                <div class="metric">
+                  <span>Scaling</span>
+                  <strong>Instant Resize</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-aside reveal">
+              <div class="load-panel">
+                <span class="muted-label">Fleet Overview</span>
+                <div class="load-bars">
+                  <div class="bar-row">
+                    <span>CPU Pool</span>
+                    <div class="bar"><span style="width: 58%"></span></div>
+                    <strong>58%</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span>RAM Pool</span>
+                    <div class="bar"><span style="width: 63%"></span></div>
+                    <strong>63%</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span>Snapshots</span>
+                    <div class="bar"><span style="width: 41%"></span></div>
+                    <strong>41%</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-panel">
+                <span class="muted-label">Why VPS</span>
+                <p>
+                  Ideal for SaaS apps, agency workloads, custom stacks, and teams moving
+                  beyond shared hosting without stepping into full dedicated hardware yet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-heading reveal">
+              <span class="eyebrow">VPS Plans</span>
+              <h2>Performance tiers that grow with you.</h2>
+              <p>Start lean, then add compute, memory, and storage as your traffic evolves.</p>
+            </div>
+
+            <div class="pricing-grid">
+              <article class="pricing-card reveal">
+                <span class="badge">Starter VPS</span>
+                <div class="price">
+                  <strong>EGP 420</strong>
+                  <span>/mo</span>
+                </div>
+                <ul class="plan-features">
+                  <li>2 vCPU Cores</li>
+                  <li>4GB RAM</li>
+                  <li>80GB NVMe Storage</li>
+                  <li>1 Snapshot Included</li>
+                </ul>
+                <a class="btn-secondary" href="signup.html">Select VPS</a>
+              </article>
+
+              <article class="pricing-card featured reveal">
+                <span class="badge">Recommended</span>
+                <div class="price">
+                  <strong>EGP 860</strong>
+                  <span>/mo</span>
+                </div>
+                <h3>Scale VPS</h3>
+                <ul class="plan-features">
+                  <li>4 vCPU Cores</li>
+                  <li>8GB RAM</li>
+                  <li>160GB NVMe Storage</li>
+                  <li>Daily Automated Snapshots</li>
+                </ul>
+                <a class="btn" href="signup.html">Launch Now</a>
+              </article>
+
+              <article class="pricing-card reveal">
+                <span class="badge">Growth VPS</span>
+                <div class="price">
+                  <strong>EGP 1,540</strong>
+                  <span>/mo</span>
+                </div>
+                <ul class="plan-features">
+                  <li>8 vCPU Cores</li>
+                  <li>16GB RAM</li>
+                  <li>320GB NVMe Storage</li>
+                  <li>Priority 24/7 Support</li>
+                </ul>
+                <a class="btn-secondary" href="portal.html">Talk to an Architect</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-heading reveal">
+              <span class="eyebrow">Live VPS Matrix</span>
+              <h2>VPS plans loaded from the backend.</h2>
+              <p>
+                Compare the current VPS catalogue from the Express API, then move
+                directly into signup or support from the same page.
+              </p>
+            </div>
+
+            <div class="dynamic-grid dynamic-grid-plans reveal" data-plan-list="vps"></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="feature-grid">
+              <article class="feature-card reveal">
+                <span class="eyebrow">Root Access</span>
+                <h3>Full control over your stack.</h3>
+                <p>Install custom runtimes, manage services, and shape your environment exactly how you need it.</p>
+              </article>
+              <article class="feature-card reveal">
+                <span class="eyebrow">Instant Provisioning</span>
+                <h3>Deploy in minutes, not hours.</h3>
+                <p>Spin up new environments quickly for staging, production, and temporary traffic spikes.</p>
+              </article>
+              <article class="feature-card reveal">
+                <span class="eyebrow">Snapshot Recovery</span>
+                <h3>Safe rollback when you need it.</h3>
+                <p>Protect critical environments with snapshot workflows built for fast restoration.</p>
+              </article>
+              <article class="feature-card reveal">
+                <span class="eyebrow">Network Isolation</span>
+                <h3>Private, reliable segmentation.</h3>
+                <p>Keep application workloads isolated while preserving stable ingress and egress performance.</p>
+              </article>
+            </div>
+            <div class="section-actions reveal">
+              <a class="btn" href="plans.html">Compare All Plans</a>
+              <a class="btn-secondary" href="contact.html">Speak With Support</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid reveal">
+            <div>
+              <a class="brand" href="index.html">
+                <span class="brand-mark">D</span>
+                <span>DOMAINC Infrastructure</span>
+              </a>
+              <p>Virtual servers, dedicated hardware, and operational tooling built for serious web products.</p>
+              <div class="footer-bottom">
+                (c) 2024 DOMAINC Infrastructure. All rights reserved. 19XXX hotline.
+              </div>
+            </div>
+            <div class="footer-links">
+              <a href="plans.html">Plans</a>
+              <a href="domains.html">Domains</a>
+              <a href="portal.html">Client Portal</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="chat-widget" data-chat-widget>
+      <div class="chat-widget-header">
+        <div class="chat-widget-title">
+          <span class="brand-mark">D</span>
+          <div>
+            <strong>Chat With Us</strong>
+            <div class="mini-chat-subtitle">VPS Support</div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-widget-body">
+        <div class="mini-chat-thread" data-chat-thread aria-live="polite">
+          <div class="chat-mini bot">Need help choosing the right VPS size?</div>
+        </div>
+        <div class="quick-actions">
+          <button type="button" data-chat-suggestion="Which VPS plan should I choose?">Choose a VPS</button>
+          <button type="button" data-chat-suggestion="Do you offer backups?">Backups</button>
+          <button type="button" data-chat-suggestion="How do I contact support?">Support</button>
+        </div>
+        <form class="chat-form" data-chat-form>
+          <input class="chat-input" type="text" placeholder="Ask about VPS..." data-chat-input />
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

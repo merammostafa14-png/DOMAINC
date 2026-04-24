@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Status | DOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">D</span>
+            <span>DOMAINC</span>
+          </a>
+          <button class="nav-toggle" type="button" data-nav-toggle>Menu</button>
+          <nav class="primary-nav" data-nav>
+            <a href="index.html">Hosting</a>
+            <a href="vps.html">VPS</a>
+            <a href="dedicated.html">Dedicated</a>
+            <a href="status.html" class="active">Status</a>
+            <a href="portal.html">Client Portal</a>
+          </nav>
+          <div class="nav-actions">
+            <a href="login.html" class="btn-secondary">Login</a>
+            <a href="signup.html" class="btn">Subscribe</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="feature-hero">
+          <div class="container feature-grid-two">
+            <div class="hero-copy reveal">
+              <span class="eyebrow">Real-time infrastructure insight</span>
+              <h1>System status and operational health.</h1>
+              <p>
+                Live visibility into DOMAINC assets, global nodes, and service resilience.
+                Track availability, latency, and incident history from a single operational view.
+              </p>
+              <div class="hero-actions">
+                <a class="btn" href="portal.html">Open Console</a>
+                <a class="btn-secondary" href="status.html">Refresh Status</a>
+              </div>
+            </div>
+
+            <aside class="hero-aside reveal">
+              <div class="hero-panel">
+                <span class="muted-label">Current State</span>
+                <div class="status-banner">
+                  <div>
+                    <strong>All Systems Operational</strong>
+                    <p>Our monolith cluster is stable and all monitored services are green.</p>
+                  </div>
+                  <span class="status-pill ok">Operational</span>
+                </div>
+                <div class="stats-grid">
+                  <div class="stat-tile">
+                    <span>Global Uptime</span>
+                    <strong>99.99%</strong>
+                  </div>
+                  <div class="stat-tile">
+                    <span>Infrastructure Nodes</span>
+                    <strong>42</strong>
+                  </div>
+                  <div class="stat-tile">
+                    <span>Latency SLA</span>
+                    <strong>12ms</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-panel">
+                <span class="muted-label">Service health</span>
+                <div class="table-wrap">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Region</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Compute Engine</td>
+                        <td><span class="status-pill ok">Operational</span></td>
+                        <td>Global</td>
+                      </tr>
+                      <tr>
+                        <td>Database</td>
+                        <td><span class="status-pill ok">Operational</span></td>
+                        <td>Global</td>
+                      </tr>
+                      <tr>
+                        <td>API Gateway</td>
+                        <td><span class="status-pill warn">Monitoring</span></td>
+                        <td>NA-West</td>
+                      </tr>
+                      <tr>
+                        <td>Storage</td>
+                        <td><span class="status-pill ok">Operational</span></td>
+                        <td>EU-Central</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-heading reveal">
+              <span class="eyebrow">Infrastructure matrix</span>
+              <h2>Service availability across the platform.</h2>
+              <p>
+                Every core system is tracked with region-level status, uptime, and operational alerts.
+              </p>
+            </div>
+
+            <div class="portal-grid">
+              <article class="portal-card reveal">
+                <span class="muted-label">Global node matrix</span>
+                <div class="load-bars">
+                  <div class="bar-row">
+                    <span>NA-East</span>
+                    <div class="bar"><span style="width: 92%"></span></div>
+                    <strong>92%</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span>EU-Central</span>
+                    <div class="bar"><span style="width: 95%"></span></div>
+                    <strong>95%</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span>AP-South</span>
+                    <div class="bar"><span style="width: 89%"></span></div>
+                    <strong>89%</strong>
+                  </div>
+                </div>
+              </article>
+
+              <article class="portal-card reveal note-card">
+                <span class="muted-label">Incident timeline</span>
+                <ul class="timeline-list">
+                  <li>
+                    <strong>Apr 18, 2026</strong>
+                    <p>DNS propagation delay causing elevated API error rate in NA-West, rerouted traffic successfully.</p>
+                  </li>
+                  <li>
+                    <strong>Apr 14, 2026</strong>
+                    <p>Storage maintenance in EU-Central completed with failover to secondary nodes.</p>
+                  </li>
+                  <li>
+                    <strong>Apr 09, 2026</strong>
+                    <p>Minor latency spike on Global Network during expected maintenance window.</p>
+                  </li>
+                </ul>
+              </article>
+
+              <article class="portal-card reveal">
+                <span class="muted-label">Performance snapshot</span>
+                <div class="stats-grid">
+                  <div class="stat-tile">
+                    <span>API Throughput</span>
+                    <strong>4.2 TB/s</strong>
+                  </div>
+                  <div class="stat-tile">
+                    <span>Edge Health</span>
+                    <strong>99.98%</strong>
+                  </div>
+                  <div class="stat-tile">
+                    <span>Critical Alerts</span>
+                    <strong>2</strong>
+                  </div>
+                </div>
+              </article>
+
+              <article class="portal-card reveal">
+                <span class="muted-label">Operational note</span>
+                <p>
+                  All monitored regions are within targets. Continued health checks are active for API and storage clusters, with automatic mitigation ready for spike events.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="portal.html">Open Infrastructure</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid reveal">
+            <div>
+              <a class="brand" href="index.html">
+                <span class="brand-mark">D</span>
+                <span>DOMAINC Infrastructure</span>
+              </a>
+              <p>Real-time status and incident history for every edge node in the DOMAINC network.</p>
+              <div class="footer-bottom">(c) 2026 DOMAINC Infrastructure. All rights reserved.</div>
+            </div>
+            <div class="footer-links">
+              <a href="portal.html">Console</a>
+              <a href="status.html">System Status</a>
+              <a href="api-reference.html">API Reference</a>
+              <a href="contact.html">Support</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

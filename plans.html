@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hosting Plans | DOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">D</span>
+            <span>DOMAINC</span>
+          </a>
+          <button class="nav-toggle" type="button" data-nav-toggle>Menu</button>
+          <nav class="primary-nav" data-nav>
+            <a href="index.html">Hosting</a>
+            <a href="domains.html">Domains</a>
+            <a href="plans.html" class="active">Plans</a>
+            <a href="vps.html">VPS</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <a href="login.html" class="btn-secondary">Login</a>
+            <a href="signup.html" class="btn">Get Started</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="feature-hero">
+          <div class="container feature-grid-two">
+            <div class="hero-copy reveal">
+              <span class="eyebrow">Hosting Plans</span>
+              <h1>Pricing tiers connected to the backend.</h1>
+              <p>
+                Compare live hosting plans, review included features, and move from entry
+                hosting into premium support and managed scale without changing your design flow.
+              </p>
+              <div class="hero-actions">
+                <a class="btn" href="signup.html">Create Account</a>
+                <a class="btn-secondary" href="contact.html">Talk to Sales</a>
+              </div>
+            </div>
+            <aside class="hero-aside reveal">
+              <div class="hero-panel">
+                <span class="muted-label">Plan logic</span>
+                <p>
+                  This page loads its plan cards from the Express API and keeps the same
+                  visual system used across the site.
+                </p>
+              </div>
+              <div class="load-panel">
+                <span class="muted-label">What you can compare</span>
+                <div class="load-bars">
+                  <div class="bar-row">
+                    <span>Storage</span>
+                    <div class="bar"><span style="width: 84%"></span></div>
+                    <strong>84%</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span>Support</span>
+                    <div class="bar"><span style="width: 92%"></span></div>
+                    <strong>92%</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span>Scalability</span>
+                    <div class="bar"><span style="width: 76%"></span></div>
+                    <strong>76%</strong>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-heading reveal">
+              <span class="eyebrow">Live Plans</span>
+              <h2>Hosting plans from the API.</h2>
+              <p>
+                These cards render from the backend when the Express server is running, with
+                graceful static fallback if the API is unavailable.
+              </p>
+            </div>
+            <div class="dynamic-grid dynamic-grid-plans reveal" data-plan-list="hosting"></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="contact-shell">
+              <article class="contact-story reveal">
+                <span class="eyebrow">Guidance</span>
+                <h2>Need help matching a plan to your workload?</h2>
+                <p>
+                  Tell us about your site size, traffic profile, or migration timeline and we
+                  will point you to the best starting tier.
+                </p>
+              </article>
+              <article class="contact-panel reveal">
+                <p class="muted-label">Next steps</p>
+                <h3>Move from pricing to action.</h3>
+                <div class="story-list">
+                  <div class="story-item">
+                    <div class="story-meta">1</div>
+                    <h3>Choose a plan</h3>
+                    <p>Review the live matrix and pick the tier closest to your current workload.</p>
+                  </div>
+                  <div class="story-item">
+                    <div class="story-meta">2</div>
+                    <h3>Request a migration</h3>
+                    <p>Use the contact form for a guided move, DNS planning, or a custom quote.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid reveal">
+            <div>
+              <a class="brand" href="index.html">
+                <span class="brand-mark">D</span>
+                <span>DOMAINC Infrastructure</span>
+              </a>
+              <p>API-driven pricing, domain tooling, and support flows for modern infrastructure teams.</p>
+              <div class="footer-bottom">(c) 2026 DOMAINC Infrastructure. All rights reserved.</div>
+            </div>
+            <div class="footer-links">
+              <a href="index.html">Hosting</a>
+              <a href="domains.html">Domains</a>
+              <a href="contact.html">Contact</a>
+              <a href="portal.html">Portal</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

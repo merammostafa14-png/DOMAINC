@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Containers | DOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="portal-layout">
+      <aside class="portal-sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">D</span>
+          <span>DOMAINC</span>
+        </a>
+
+        <nav class="sidebar-nav">
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="containers.html" class="active">Containers</a>
+          <a href="storage.html">Storage</a>
+          <a href="status.html">System Status</a>
+          <a href="api-reference.html">API Reference</a>
+          <a href="portal.html">Overview</a>
+          <a href="#">Billing</a>
+          <a href="#">Settings</a>
+          <a href="#">Support</a>
+        </nav>
+
+        <div class="sidebar-footer portal-panel">
+          <span class="muted-label">Container Operations</span>
+          <p>Monitor active traffic, DNS records, and regional edge node performance for containerized workloads.</p>
+        </div>
+      </aside>
+
+      <section class="portal-main">
+        <header class="portal-header reveal">
+          <div>
+            <span class="eyebrow">Global container fabric</span>
+            <h1>Run containers across the DOMAINC network.</h1>
+          </div>
+          <a class="btn-secondary" href="portal.html">Back to Portal</a>
+        </header>
+
+        <div class="portal-kpi-grid">
+          <article class="portal-card reveal">
+            <span class="muted-label">Active traffic</span>
+            <strong class="portal-kpi">4.2 TB/s</strong>
+            <p>Global request volume across container hosts.</p>
+          </article>
+          <article class="portal-card reveal">
+            <span class="muted-label">Network health</span>
+            <strong class="portal-kpi">99.998%</strong>
+            <p>Edge and container network stability.</p>
+          </article>
+          <article class="portal-card reveal">
+            <span class="muted-label">DNS authority</span>
+            <strong class="portal-kpi">94%</strong>
+            <p>Request confidence through managed records.</p>
+          </article>
+          <article class="portal-card reveal">
+            <span class="muted-label">Latency</span>
+            <strong class="portal-kpi">10ms</strong>
+            <p>Global median response time from the edge.</p>
+          </article>
+        </div>
+
+        <div class="portal-grid portal-grid-wide">
+          <div class="portal-stack">
+            <article class="portal-card reveal">
+              <span class="muted-label">Global edge distribution</span>
+              <p>Real-time visualization of your distributed infrastructure across 42 global POPs, optimized for sub-10ms latency.</p>
+              <div class="status-banner">
+                <div>
+                  <strong>Edge health stable</strong>
+                  <p>Traffic is balanced and nodes are reporting normal throughput.</p>
+                </div>
+                <span class="status-pill ok">Stable</span>
+              </div>
+            </article>
+
+            <article class="portal-card reveal note-card">
+              <span class="muted-label">DNS management</span>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Record</th>
+                    <th>Type</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>cdn.domainc.net</td>
+                    <td>CNAME</td>
+                    <td>edge.domainc.net</td>
+                  </tr>
+                  <tr>
+                    <td>api.domainc.com</td>
+                    <td>A</td>
+                    <td>45.12.88.102</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+          </div>
+
+          <div class="portal-stack">
+            <article class="portal-card reveal">
+              <span class="muted-label">Global node inventory</span>
+              <ul class="timeline-list">
+                <li>
+                  <strong>US-East-1</strong>
+                  <p>Active container host pool with 98% network saturation margin.</p>
+                </li>
+                <li>
+                  <strong>EU-Central-1</strong>
+                  <p>Balanced load across compute and storage layers for EU traffic.</p>
+                </li>
+                <li>
+                  <strong>AP-South-1</strong>
+                  <p>Low-latency gateway for APAC workloads with encrypted replication.</p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="portal-card reveal">
+              <span class="muted-label">Recent activity</span>
+              <p>New container clusters deployed with zero downtime and automatic traffic routing.</p>
+              <div class="hero-actions">
+                <a class="btn" href="api-reference.html">Manage Containers</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

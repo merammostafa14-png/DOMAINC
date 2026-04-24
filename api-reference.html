@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Reference | DOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="portal-layout">
+      <aside class="portal-sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">D</span>
+          <span>DOMAINC</span>
+        </a>
+
+        <nav class="sidebar-nav">
+          <a href="portal.html">Overview</a>
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="containers.html">Containers</a>
+          <a href="storage.html">Storage</a>
+          <a href="status.html">System Status</a>
+          <a href="api-reference.html" class="active">API Reference</a>
+          <a href="plans.html">Billing</a>
+          <a href="login.html">Settings</a>
+          <a href="contact.html">Support</a>
+        </nav>
+
+        <div class="sidebar-footer portal-panel">
+          <span class="muted-label">API documentation</span>
+          <p>Programmatically manage your infrastructure, deployment, and monitoring workflows.</p>
+        </div>
+      </aside>
+
+      <section class="portal-main">
+        <header class="portal-header reveal">
+          <div>
+            <span class="eyebrow">Docs</span>
+            <h1>API reference for DOMAINC platform.</h1>
+          </div>
+          <a class="btn-secondary" href="portal.html">Return to Portal</a>
+        </header>
+
+        <div class="portal-workspace">
+          <div class="portal-grid portal-grid-wide">
+            <div class="portal-stack">
+              <article class="portal-card reveal">
+                <span class="muted-label">Instances API</span>
+                <h2>Manage compute resources.</h2>
+                <p>Provision, scale, and inspect virtual instances across the global edge network.</p>
+                <div class="api-card api-panel">
+                  <span class="muted-label">Endpoint</span>
+                  <div class="api-code">GET /v1/instances</div>
+                </div>
+              </article>
+
+              <article class="portal-card reveal note-card">
+                <span class="muted-label">Authentication</span>
+                <p>All calls require a bearer token set in the Authorization header. Use API keys from your account settings.</p>
+                <div class="hero-actions">
+                  <a class="btn" href="#instances">View Example</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="portal-stack">
+              <article class="portal-card reveal" id="instances">
+                <span class="muted-label">Request example</span>
+                <div class="api-code">curl -X POST https://api.domainc.com/v1/instances \
+  -H "Authorization: Bearer $API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "plan_id": "std-2-4",
+    "region": "us-east-1",
+    "image": "ubuntu-22-04-lts",
+    "label": "production-db-01"
+  }'
+</div>
+                <span class="muted-label">Response</span>
+                <div class="api-code">{
+  "status": "success",
+  "data": {
+    "id": "inst_928kL82p",
+    "status": "provisioning",
+    "ipv4": "157.230.12.44",
+    "created_at": "2023-10-27T14:20:01Z",
+    "config": {
+      "plan": "std-2-4",
+      "region": "us-east-1"
+    }
+  }
+}</div>
+              </article>
+            </div>
+          </div>
+
+          <aside class="portal-rail">
+            <article class="portal-card reveal support-card">
+              <span class="muted-label">API checklist</span>
+              <h3>Everything you need before first request.</h3>
+              <ul class="timeline-list compact-list">
+                <li>
+                  <strong>Create API key</strong>
+                  <p>Generate a bearer token from account settings.</p>
+                </li>
+                <li>
+                  <strong>Pick target region</strong>
+                  <p>Match latency and compliance requirements before provisioning.</p>
+                </li>
+                <li>
+                  <strong>Verify payload schema</strong>
+                  <p>Use the sample request below to validate your JSON body.</p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="portal-card reveal">
+              <span class="muted-label">Popular endpoints</span>
+              <ul class="command-list">
+                <li><span>`GET /v1/instances`</span><strong>List</strong></li>
+                <li><span>`POST /v1/volumes`</span><strong>Create</strong></li>
+                <li><span>`GET /v1/events`</span><strong>Stream</strong></li>
+              </ul>
+            </article>
+
+            <article class="portal-card reveal mini-chat-card">
+              <div class="chat-widget-title">
+                <span class="brand-mark">D</span>
+                <div>
+                  <strong>Docs helper</strong>
+                  <div class="mini-chat-subtitle">Integration guide</div>
+                </div>
+              </div>
+              <div class="mini-chat-thread">
+                <div class="chat-mini bot">Need a safe first call?</div>
+                <div class="chat-mini user">I want to provision a test instance.</div>
+                <div class="chat-mini bot">Start with `POST /v1/instances` using the example request and a non-production region.</div>
+              </div>
+            </article>
+          </aside>
+        </div>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-heading reveal">
+              <span class="eyebrow">Endpoint overview</span>
+              <h2>API surface for automation.</h2>
+              <p>Query instances, manage networking, inspect storage, and build secure deployment pipelines.</p>
+            </div>
+
+            <div class="feature-grid">
+              <article class="feature-card reveal">
+                <span class="eyebrow">Network</span>
+                <h3>Control load balancers and public IP assignments.</h3>
+              </article>
+              <article class="feature-card reveal">
+                <span class="eyebrow">Storage</span>
+                <h3>Create, attach, and snapshot NVMe volumes.</h3>
+              </article>
+              <article class="feature-card reveal">
+                <span class="eyebrow">Billing</span>
+                <h3>Fetch usage records and invoice history.</h3>
+              </article>
+              <article class="feature-card reveal">
+                <span class="eyebrow">Logs</span>
+                <h3>Stream event telemetry and audit records.</h3>
+              </article>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domain Services | DOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="has-chatbot">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">D</span>
+            <span>DOMAINC</span>
+          </a>
+          <button class="nav-toggle" type="button" data-nav-toggle>Menu</button>
+          <nav class="primary-nav" data-nav>
+            <a href="index.html">Hosting</a>
+            <a href="domains.html" class="active">Domains</a>
+            <a href="plans.html">Plans</a>
+            <a href="vps.html">VPS</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <a href="login.html" class="btn-secondary">Login</a>
+            <a href="signup.html" class="btn">Register Domain</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container hero-grid">
+            <div class="hero-copy reveal">
+              <span class="eyebrow">Domain Services</span>
+              <h1>Search, secure, and manage critical domains.</h1>
+              <p>
+                Register premium names, transfer domains safely, and operate managed DNS
+                from the same infrastructure platform.
+              </p>
+              <form class="domain-search" data-domain-form>
+                <input type="text" value="mybrand.com" aria-label="Domain search" data-domain-input />
+                <button class="btn" type="submit">Search</button>
+              </form>
+              <div class="result-banner" data-domain-result hidden></div>
+              <div class="hero-actions">
+                <a class="btn" href="signup.html">Start Registration</a>
+                <a class="btn-secondary" href="contact.html">Transfer a Domain</a>
+              </div>
+            </div>
+
+            <aside class="hero-aside reveal">
+              <div class="hero-panel">
+                <span class="muted-label">Included benefits</span>
+                <div class="stats-grid">
+                  <div class="stat-tile">
+                    <span>DNS</span>
+                    <strong>Managed</strong>
+                  </div>
+                  <div class="stat-tile">
+                    <span>Privacy</span>
+                    <strong>Optional</strong>
+                  </div>
+                  <div class="stat-tile">
+                    <span>Transfers</span>
+                    <strong>Guided</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="load-panel">
+                <span class="muted-label">Popular TLD pricing</span>
+                <div class="load-bars">
+                  <div class="bar-row">
+                    <span>.COM</span>
+                    <div class="bar"><span style="width: 69%"></span></div>
+                    <strong>$9.99</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span>.NET</span>
+                    <div class="bar"><span style="width: 78%"></span></div>
+                    <strong>$12.99</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span>.TECH</span>
+                    <div class="bar"><span style="width: 45%"></span></div>
+                    <strong>$1.99</strong>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-heading reveal">
+              <span class="eyebrow">Services</span>
+              <h2>Domain services loaded from the API.</h2>
+              <p>Registration, transfers, DNS, and protection services are fetched from the backend.</p>
+            </div>
+            <div class="dynamic-grid dynamic-grid-services reveal" data-domain-services></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid reveal">
+            <div>
+              <a class="brand" href="index.html">
+                <span class="brand-mark">D</span>
+                <span>DOMAINC Infrastructure</span>
+              </a>
+              <p>Domain registration and DNS tooling that stays aligned with the platform's premium UI.</p>
+              <div class="footer-bottom">(c) 2026 DOMAINC Infrastructure. All rights reserved.</div>
+            </div>
+            <div class="footer-links">
+              <a href="plans.html">Plans</a>
+              <a href="contact.html">Contact</a>
+              <a href="status.html">Status</a>
+              <a href="portal.html">Portal</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="chat-widget" data-chat-widget>
+      <div class="chat-widget-header">
+        <div class="chat-widget-title">
+          <span class="brand-mark">D</span>
+          <div>
+            <strong>Domain Assistant</strong>
+            <div class="mini-chat-subtitle">Instant domain guidance</div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-widget-body">
+        <div class="mini-chat-thread" data-chat-thread aria-live="polite">
+          <div class="chat-mini bot">Ask about registration, transfer timing, or DNS setup.</div>
+        </div>
+        <div class="quick-actions">
+          <button type="button" data-chat-suggestion="I need a domain">Find a domain</button>
+          <button type="button" data-chat-suggestion="How do transfers work?">Transfers</button>
+          <button type="button" data-chat-suggestion="Do you offer DNS?">DNS</button>
+        </div>
+        <form class="chat-form" data-chat-form>
+          <input class="chat-input" type="text" placeholder="Ask about domains..." data-chat-input />
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

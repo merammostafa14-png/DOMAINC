@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage | DOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="portal-layout">
+      <aside class="portal-sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">D</span>
+          <span>DOMAINC</span>
+        </a>
+
+        <nav class="sidebar-nav">
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="containers.html">Containers</a>
+          <a href="storage.html" class="active">Storage</a>
+          <a href="status.html">System Status</a>
+          <a href="api-reference.html">API Reference</a>
+          <a href="portal.html">Overview</a>
+          <a href="#">Billing</a>
+          <a href="#">Settings</a>
+          <a href="#">Support</a>
+        </nav>
+
+        <div class="sidebar-footer portal-panel">
+          <span class="muted-label">Storage visibility</span>
+          <p>High-performance NVMe arrays, backup status, and replication health for your volumes.</p>
+        </div>
+      </aside>
+
+      <section class="portal-main">
+        <header class="portal-header reveal">
+          <div>
+            <span class="eyebrow">Storage architecture</span>
+            <h1>High-performance NVMe storage at global scale.</h1>
+          </div>
+          <a class="btn-secondary" href="portal.html">Back to Portal</a>
+        </header>
+
+        <div class="portal-kpi-grid">
+          <article class="portal-card reveal">
+            <span class="muted-label">Total capacity</span>
+            <strong class="portal-kpi">8.2 TB</strong>
+            <p>Active NVMe capacity across storage pools.</p>
+          </article>
+          <article class="portal-card reveal">
+            <span class="muted-label">Reliability</span>
+            <strong class="portal-kpi">99.9%</strong>
+            <p>Platform durability and availability.</p>
+          </article>
+          <article class="portal-card reveal">
+            <span class="muted-label">Backup status</span>
+            <strong class="portal-kpi">Daily</strong>
+            <p>Snapshots completed 12 minutes ago.</p>
+          </article>
+          <article class="portal-card reveal">
+            <span class="muted-label">Replication</span>
+            <strong class="portal-kpi">Active</strong>
+            <p>Encrypted offsite replication enabled.</p>
+          </article>
+        </div>
+
+        <div class="portal-grid portal-grid-wide">
+          <div class="portal-stack">
+            <article class="portal-card reveal">
+              <span class="muted-label">Storage performance</span>
+              <div class="stats-grid">
+                <div class="metric">
+                  <span>Read / Write</span>
+                  <strong>7.8 GB/s</strong>
+                </div>
+                <div class="metric">
+                  <span>Cluster usage</span>
+                  <strong>42%</strong>
+                </div>
+                <div class="metric">
+                  <span>IOPS ceiling</span>
+                  <strong>160,000</strong>
+                </div>
+              </div>
+              <p>Immutable, encrypted storage with low-latency access across the global backbone.</p>
+            </article>
+
+            <article class="portal-card reveal note-card">
+              <span class="muted-label">Storage report</span>
+              <p>Primary system root volumes and block storage clusters are operating within expected thresholds.</p>
+              <div class="hero-actions">
+                <a class="btn" href="api-reference.html">View Storage API</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="portal-stack">
+            <article class="portal-card reveal">
+              <span class="muted-label">Volume status</span>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Node</th>
+                    <th>Region</th>
+                    <th>Usage</th>
+                    <th>Perf</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>storage-node-01</td>
+                    <td>US-East</td>
+                    <td>420 GB / 1 TB</td>
+                    <td>160k IOPS</td>
+                  </tr>
+                  <tr>
+                    <td>storage-node-04</td>
+                    <td>EU-Central</td>
+                    <td>1.56 TB / 2 TB</td>
+                    <td>120k IOPS</td>
+                  </tr>
+                  <tr>
+                    <td>storage-node-09</td>
+                    <td>AP-South</td>
+                    <td>320 GB / 1 TB</td>
+                    <td>140k IOPS</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+
+            <article class="portal-card reveal">
+              <span class="muted-label">Replication summary</span>
+              <ul class="timeline-list">
+                <li>
+                  <strong>Frankfurt node</strong>
+                  <p>Sync status: Active. Off-site replication within SLA.</p>
+                </li>
+                <li>
+                  <strong>Virginia node</strong>
+                  <p>Replication queue: empty. No delayed writes.</p>
+                </li>
+                <li>
+                  <strong>Mumbai node</strong>
+                  <p>Encryption: AES-256-XTS enabled across all volumes.</p>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
