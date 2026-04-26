@@ -3,8 +3,6 @@ const supabase = require("../utils/supabaseClient");
 async function register(req, res, next) {
   try {
     const { name, email, password } = req.body;
-    console.log("Register attempt:", { name, email, password: password ? "****" : "missing" });
-
     if (!name || !email || !password) {
       console.log("Register failed: Missing fields");
       return res.status(400).json({

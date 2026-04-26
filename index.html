@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,30 +12,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<script type="module">
-  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-
-  const supabase = createClient(
-    "https://agrlqnknhahhzupzqkvc.supabase.co/",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFncmxxbmtuaGFoaHp1cHpxa3ZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI2NjEyODksImV4cCI6MjA1ODI0NzI4OX0.aC-qT8nJ2cWVd5q46Q1j4cFFU2Y-c2eU145f-D4Dq7M"
-  )
-
-  window.signUp = async function (email, password) {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password
-    })
-    console.log("signup:", data, error)
-  }
-
-  window.login = async function (email, password) {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    })
-    console.log("login:", data, error)
-  }
-</script>
+<script type="module" src="script.js"></script>
 
 <body class="has-chatbot">
   <div class="page-shell">
@@ -529,7 +506,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>

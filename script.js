@@ -1,6 +1,10 @@
-const API_ROOT = window.location.origin === "null" || window.location.protocol === "file:" 
-  ? "http://localhost:3000/api" 
-  : "/api";
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+const SUPABASE_URL = "https://agrlqnknhahhzupzqkvc.supabase.co"
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFncmxxbmtuaGFoaHp1cHpxa3ZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI2NjEyODksImV4cCI6MjA1ODI0NzI4OX0.aC-qT8nJ2cWVd5q46Q1j4cFFU2Y-c2eU145f-D4Dq7M"
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
 const AUTH_STORAGE_KEY = "domainc-auth";
 
 const fallbackPlans = {
@@ -116,23 +120,6 @@ const chatRules = [
   },
 ];
 
-function requestJson(path, options = {}) {
-  const headers = {
-    "Content-Type": "application/json",
-    ...(options.headers || {}),
-  };
-
-  return fetch(path, {
-    ...options,
-    headers,
-  }).then(async (response) => {
-    const payload = await response.json().catch(() => ({}));
-    if (!response.ok) {
-      throw new Error(payload.message || "Request failed");
-    }
-    return payload;
-  });
-}
 
 function setButtonState(button, label, disabled) {
   if (!button) {
@@ -228,19 +215,11 @@ async function initPlanLists() {
     return;
   }
 
-  await Promise.all(
-    [...roots].map(async (root) => {
-      const category = root.dataset.planList || "hosting";
-      const fallback = fallbackPlans[category] || fallbackPlans.hosting;
-
-      try {
-        const payload = await requestJson(`${API_ROOT}/plans?category=${encodeURIComponent(category)}`);
-        renderPlans(root, payload.data || fallback);
-      } catch (error) {
-        renderPlans(root, fallback);
-      }
-    })
-  );
+  roots.forEach((root) => {
+    const category = root.dataset.planList || "hosting";
+    const plans = fallbackPlans[category] || fallbackPlans.hosting;
+    renderPlans(root, plans);
+  });
 }
 
 function renderDomainServices(root, services) {
@@ -266,12 +245,7 @@ async function initDomainServices() {
     return;
   }
 
-  try {
-    const payload = await requestJson(`${API_ROOT}/domains/services`);
-    roots.forEach((root) => renderDomainServices(root, payload.data || fallbackDomainServices));
-  } catch (error) {
-    roots.forEach((root) => renderDomainServices(root, fallbackDomainServices));
-  }
+  roots.forEach((root) => renderDomainServices(root, fallbackDomainServices));
 }
 
 function showDomainResult(container, result) {
@@ -308,14 +282,8 @@ function initDomainForms() {
 
       setButtonState(button, "Checking...", true);
 
-      try {
-        const payload = await requestJson(`${API_ROOT}/domains/search`, {
-          method: "POST",
-          body: JSON.stringify({ query }),
-        });
-
-        showDomainResult(result, payload.data);
-      } catch (error) {
+      // Simulation of domain search for frontend-only mode
+      setTimeout(() => {
         const pseudoAvailable = query.length % 2 === 0;
         showDomainResult(result, {
           domain: query,
@@ -325,9 +293,8 @@ function initDomainForms() {
             : "That domain may already be taken. Try one of the suggestions below.",
           suggestions: [`secure-${query}`, `${query.split(".")[0] || "domainc"}.net`, `${query.split(".")[0] || "domainc"}.tech`],
         });
-      } finally {
         setButtonState(button, "Search", false);
-      }
+      }, 600);
     });
   });
 }
@@ -358,15 +325,16 @@ function initContactForms() {
       setButtonState(button, "Sending...", true);
 
       try {
-        const response = await requestJson(`${API_ROOT}/contact`, {
-          method: "POST",
-          body: JSON.stringify(payload),
-        });
+        // Direct Supabase insertion
+        const { error } = await supabase.from('contacts').insert([payload]);
+
+        if (error) throw error;
 
         form.reset();
-        setFeedback(feedback, "success", response.message || "Your request has been submitted successfully.");
+        setFeedback(feedback, "success", "Your request has been submitted successfully.");
       } catch (error) {
-        setFeedback(feedback, "warning", "The backend is unavailable right now, but your message is ready to send once the server starts.");
+        console.error("Contact Error:", error);
+        setFeedback(feedback, "warning", "Unable to send message directly to database. Please try again later.");
       } finally {
         setButtonState(button, "Send Request", false);
       }
@@ -399,20 +367,32 @@ function initAuthForms() {
     loginForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       const formData = new FormData(loginForm);
-      const payload = Object.fromEntries(formData.entries());
+      const { email, password } = Object.fromEntries(formData.entries());
 
       setButtonState(button, "Authenticating...", true);
 
       try {
-        const response = await requestJson(`${API_ROOT}/auth/login`, {
-          method: "POST",
-          body: JSON.stringify(payload),
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password
         });
 
-        storeAuthSession(response.data);
-        setFeedback(feedback, "success", response.message || "Login successful. Redirecting...");
+        if (error) throw error;
+
+        // Map Supabase response to the format expected by the app
+        const sessionData = {
+          user: {
+            id: data.user.id,
+            email: data.user.email,
+            name: data.user.user_metadata?.full_name || data.user.email
+          },
+          token: data.session.access_token
+        };
+
+        storeAuthSession(sessionData);
+        setFeedback(feedback, "success", "Login successful. Redirecting...");
         window.setTimeout(() => {
-          window.location.href = response.data?.redirectTo || "portal.html";
+          window.location.href = "portal.html";
         }, 500);
       } catch (error) {
         console.error("Auth Error:", error);
@@ -430,21 +410,41 @@ function initAuthForms() {
     signupForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       const formData = new FormData(signupForm);
-      const payload = Object.fromEntries(formData.entries());
+      const { name, email, password } = Object.fromEntries(formData.entries());
 
       setButtonState(button, "Creating...", true);
 
       try {
-        const response = await requestJson(`${API_ROOT}/auth/register`, {
-          method: "POST",
-          body: JSON.stringify(payload),
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              full_name: name
+            }
+          }
         });
 
-        storeAuthSession(response.data);
-        setFeedback(feedback, "success", response.message || "Account created successfully. Redirecting...");
-        window.setTimeout(() => {
-          window.location.href = "portal.html";
-        }, 500);
+        if (error) throw error;
+
+        const sessionData = {
+          user: {
+            id: data.user.id,
+            email: data.user.email,
+            name: data.user.user_metadata?.full_name || name
+          },
+          token: data.session?.access_token
+        };
+
+        if (!data.session) {
+          setFeedback(feedback, "success", "Account created! Please check your email for a verification link.");
+        } else {
+          storeAuthSession(sessionData);
+          setFeedback(feedback, "success", "Account created successfully. Redirecting...");
+          window.setTimeout(() => {
+            window.location.href = "portal.html";
+          }, 500);
+        }
       } catch (error) {
         console.error("Auth Error:", error);
         setFeedback(feedback, "warning", error.message || "Account creation failed.");

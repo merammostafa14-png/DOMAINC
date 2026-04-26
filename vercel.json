@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/(index|contact|containers|dedicated|domains|infrastructure|login|plans|portal|signup|status|storage|vps)",
+      "destination": "/$1.html"
+    }
+  ]
+}
