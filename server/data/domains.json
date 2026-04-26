@@ -1,0 +1,34 @@
+{
+  "services": [
+    {
+      "id": "registration",
+      "title": "Domain Registration",
+      "description": "Secure premium TLDs with transparent pricing and quick provisioning.",
+      "highlight": ".com from $9.99"
+    },
+    {
+      "id": "transfers",
+      "title": "Transfers",
+      "description": "Move domains to DOMAINC with guided migration and DNS continuity.",
+      "highlight": "Free DNS migration"
+    },
+    {
+      "id": "dns",
+      "title": "Managed DNS",
+      "description": "Low-latency DNS zones with records, failover, and team access controls.",
+      "highlight": "Global Anycast"
+    },
+    {
+      "id": "protection",
+      "title": "Protection",
+      "description": "WHOIS privacy, registrar lock controls, and renewal reminders for critical domains.",
+      "highlight": "Renewal safeguards"
+    }
+  ],
+  "tlds": [
+    { "extension": ".com", "price": "$9.99" },
+    { "extension": ".net", "price": "$12.99" },
+    { "extension": ".tech", "price": "$1.99" },
+    { "extension": ".ai", "price": "$59.99" }
+  ]
+}

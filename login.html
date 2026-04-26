@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -55,7 +55,7 @@
           <p class="muted-label">Access your infrastructure management suite.</p>
           <h2>Login</h2>
 
-          <form class="form-grid" data-login-form>
+          <form class="form-grid" data-login-form onsubmit="login(); return false;">
             <div class="field">
               <label for="login-email">Email Address</label>
               <input id="login-email" name="email" type="email" placeholder="name@company.com" required />
@@ -69,7 +69,9 @@
               <span>SSO / Token</span>
             </div>
             <div class="auth-actions">
-              <button class="btn" type="submit">Login</button>
+              <button class="btn" type="submit">
+                Login
+              </button>
             </div>
             <p class="form-feedback" data-login-feedback hidden></p>
           </form>

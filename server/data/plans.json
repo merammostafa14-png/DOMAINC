@@ -1,0 +1,74 @@
+[
+  {
+    "id": "hosting-starter",
+    "category": "hosting",
+    "name": "Starter",
+    "price": "EGP 250",
+    "suffix": "/mo",
+    "description": "Reliable entry infrastructure for focused deployment teams.",
+    "features": ["1 website", "10GB NVMe storage", "Standard support"],
+    "cta": "Select Plan",
+    "link": "signup.html",
+    "featured": false
+  },
+  {
+    "id": "hosting-professional",
+    "category": "hosting",
+    "name": "Professional",
+    "price": "EGP 700",
+    "suffix": "/mo",
+    "description": "Balanced compute, support, and domain ownership for scaling teams.",
+    "features": ["Unlimited websites", "100GB NVMe storage", "Priority 24/7 support", "Free domain included"],
+    "cta": "Start Free Trial",
+    "link": "signup.html",
+    "featured": true
+  },
+  {
+    "id": "hosting-business",
+    "category": "hosting",
+    "name": "Business",
+    "price": "EGP 1400",
+    "suffix": "/mo",
+    "description": "High-touch infrastructure for enterprise operations.",
+    "features": ["Unmetered resources", "Dedicated IP address", "Daily backups"],
+    "cta": "Talk to Sales",
+    "link": "contact.html",
+    "featured": false
+  },
+  {
+    "id": "vps-starter",
+    "category": "vps",
+    "name": "Starter VPS",
+    "price": "EGP 420",
+    "suffix": "/mo",
+    "description": "Lean compute for app staging and early growth workloads.",
+    "features": ["2 vCPU cores", "4GB RAM", "80GB NVMe storage", "1 snapshot included"],
+    "cta": "Select VPS",
+    "link": "signup.html",
+    "featured": false
+  },
+  {
+    "id": "vps-scale",
+    "category": "vps",
+    "name": "Scale VPS",
+    "price": "EGP 860",
+    "suffix": "/mo",
+    "description": "Balanced VPS configuration for growing SaaS applications.",
+    "features": ["4 vCPU cores", "8GB RAM", "160GB NVMe storage", "Daily snapshots"],
+    "cta": "Launch Now",
+    "link": "signup.html",
+    "featured": true
+  },
+  {
+    "id": "vps-growth",
+    "category": "vps",
+    "name": "Growth VPS",
+    "price": "EGP 1540",
+    "suffix": "/mo",
+    "description": "High-room compute with premium support and scaling headroom.",
+    "features": ["8 vCPU cores", "16GB RAM", "320GB NVMe storage", "Priority support"],
+    "cta": "Talk to an Architect",
+    "link": "contact.html",
+    "featured": false
+  }
+]

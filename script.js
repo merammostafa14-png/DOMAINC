@@ -1,4 +1,6 @@
-const API_ROOT = "/api";
+const API_ROOT = window.location.origin === "null" || window.location.protocol === "file:" 
+  ? "http://localhost:3000/api" 
+  : "/api";
 const AUTH_STORAGE_KEY = "domainc-auth";
 
 const fallbackPlans = {
@@ -376,6 +378,16 @@ function storeAuthSession(data) {
   localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(data));
 }
 
+function getAuthSession() {
+  const session = localStorage.getItem(AUTH_STORAGE_KEY);
+  return session ? JSON.parse(session) : null;
+}
+
+function logout() {
+  localStorage.removeItem(AUTH_STORAGE_KEY);
+  window.location.href = "login.html";
+}
+
 function initAuthForms() {
   const loginForm = document.querySelector("[data-login-form]");
   const signupForm = document.querySelector("[data-signup-form]");
@@ -403,6 +415,7 @@ function initAuthForms() {
           window.location.href = response.data?.redirectTo || "portal.html";
         }, 500);
       } catch (error) {
+        console.error("Auth Error:", error);
         setFeedback(feedback, "warning", error.message || "Login failed. Please check your credentials.");
       } finally {
         setButtonState(button, "Login", false);
@@ -433,11 +446,96 @@ function initAuthForms() {
           window.location.href = "portal.html";
         }, 500);
       } catch (error) {
+        console.error("Auth Error:", error);
         setFeedback(feedback, "warning", error.message || "Account creation failed.");
       } finally {
         setButtonState(button, "Create Account", false);
       }
     });
+  }
+}
+
+function initProtectedPage() {
+  const isProtected = window.location.pathname.includes("portal.html") || 
+                      window.location.pathname.includes("infrastructure.html") ||
+                      window.location.pathname.includes("containers.html") ||
+                      window.location.pathname.includes("storage.html");
+
+  const session = getAuthSession();
+
+  // Handle Auth UI toggles
+  const loginLinks = document.querySelectorAll('a[href="login.html"]');
+  const signupLinks = document.querySelectorAll('a[href="signup.html"]');
+  const navActions = document.querySelector(".nav-actions");
+
+  if (session) {
+    loginLinks.forEach(link => link.style.display = "none");
+    // Optionally hide signup links if they are in the navbar
+    signupLinks.forEach(link => {
+      if (link.closest('.nav-actions') || link.closest('.site-header')) {
+        link.style.display = "none";
+      }
+    });
+
+    if (navActions && !navActions.querySelector("[data-logout-nav]")) {
+      const logoutBtn = document.createElement("a");
+      logoutBtn.href = "#";
+      logoutBtn.className = "btn-secondary";
+      logoutBtn.textContent = "Logout";
+      logoutBtn.dataset.logoutNav = "true";
+      logoutBtn.style.cursor = "pointer";
+      logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        logout();
+      });
+      navActions.prepend(logoutBtn);
+    }
+  } else {
+    loginLinks.forEach(link => link.style.display = "");
+    signupLinks.forEach(link => link.style.display = "");
+    const logoutBtn = document.querySelector("[data-logout-nav]");
+    if (logoutBtn) logoutBtn.remove();
+  }
+
+  if (isProtected && !session) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  if (session) {
+    const portalHeader = document.querySelector(".portal-header");
+    if (portalHeader) {
+      const nameEl = portalHeader.querySelector("h1");
+      const emailEl = portalHeader.querySelector(".eyebrow");
+      const actionArea = portalHeader.querySelector(".hero-actions");
+
+      if (nameEl) nameEl.textContent = `Welcome, ${session.user?.name || "Operator"}`;
+      if (emailEl) emailEl.textContent = session.user?.email || "Authenticated";
+      
+      if (actionArea && !document.querySelector("[data-logout-button]")) {
+        const logoutBtn = document.createElement("a");
+        logoutBtn.className = "btn-secondary";
+        logoutBtn.href = "#";
+        logoutBtn.textContent = "Logout";
+        logoutBtn.dataset.logoutButton = "true";
+        logoutBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          logout();
+        });
+        actionArea.prepend(logoutBtn);
+      }
+    }
+
+    // Fallback for other pages
+    const userNameElements = document.querySelectorAll("[data-user-name]");
+    const userEmailElements = document.querySelectorAll("[data-user-email]");
+    userNameElements.forEach(el => el.textContent = session.user?.name || "User");
+    userEmailElements.forEach(el => el.textContent = session.user?.email || "");
+
+    // If on login/signup page while logged in, redirect to portal
+    if (window.location.pathname.includes("login.html") || window.location.pathname.includes("signup.html")) {
+      window.location.href = "portal.html";
+    }
   }
 }
 
@@ -546,4 +644,5 @@ initDomainServices();
 initDomainForms();
 initContactForms();
 initAuthForms();
+initProtectedPage();
 initChatWidgets();

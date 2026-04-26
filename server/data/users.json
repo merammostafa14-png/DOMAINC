@@ -1,0 +1,18 @@
+[
+  {
+    "id": "user_demo_domainc",
+    "name": "DOMAINC Admin",
+    "email": "admin@domainc.com",
+    "passwordHash": "38ff81626fe4859f1b688d93b6d5a63fc9b69ad18bb7bc54bda469ba986749c7",
+    "passwordSalt": "domainc-demo-salt",
+    "createdAt": "2026-04-20T00:00:00.000Z"
+  },
+  {
+    "id": "user_1776902774434",
+    "name": "Meram",
+    "email": "merammostafa14@gmail.com",
+    "passwordHash": "1cd99842148581b078215685c279f1e6f7f4e49c50bbeabd34f66cf792fb48b5",
+    "passwordSalt": "b095184012631fbb0c41191884d209dd",
+    "createdAt": "2026-04-23T00:06:14.434Z"
+  }
+]
